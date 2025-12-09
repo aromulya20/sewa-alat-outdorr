@@ -5,140 +5,165 @@
 </p>
 
 <p align="center">
-<a href="#"><img src="https://img.shields.io/badge/Laravel-10.x-red?logo=laravel" alt="Laravel Version"></a>
-<a href="#"><img src="https://img.shields.io/badge/PHP-8.1%2B-blue?logo=php" alt="PHP Version"></a>
+<a href="#"><img src="https://img.shields.io/badge/Laravel-11.x-red?logo=laravel" alt="Laravel Version"></a>
+<a href="#"><img src="https://img.shields.io/badge/PHP-8.2%2B-blue?logo=php" alt="PHP Version"></a>
 <a href="#"><img src="https://img.shields.io/badge/Status-Active-success" alt="Status"></a>
 <a href="#"><img src="https://img.shields.io/badge/License-MIT-green" alt="License"></a>
 </p>
 
 ---
-## 📦 About the Project
 
-📘 Sewa Outdoor — Sistem Penyewaan Peralatan Outdoor
+# 🏕️ Sewa Outdoor — Outdoor Equipment Rental System
 
-Sewa Outdoor adalah aplikasi berbasis Laravel 11 untuk mengelola penyewaan peralatan outdoor seperti tenda, kompor portable, matras, senter, dan lain-lain.
-Sistem ini menyediakan fitur lengkap mulai dari manajemen alat, pemesanan multi-item, pengembalian barang, hingga dashboard statistik.
----
+**Sewa Outdoor** adalah aplikasi berbasis **Laravel 11** untuk mengelola penyewaan peralatan outdoor seperti:
 
-🚀 Fitur Utama
-✔️ Manajemen Alat
+- Tenda  
+- Kompor portable  
+- Matras  
+- Sleeping bag  
+- Senter  
+- Dan berbagai perlengkapan outdoor lainnya  
 
-Tambah, ubah, hapus alat
-
-Upload foto alat
-
-Stok otomatis berkurang dan bertambah
-
-✔️ Pemesanan Multi-Produk
-
-Tambah banyak item sekaligus ke keranjang
-
-Hitung subtotal per barang
-
-Menghitung total berdasarkan durasi hari
-
-Validasi stok otomatis
-
-✔️ Pengembalian Barang
-
-List barang yang sedang dipinjam
-
-Proses pengembalian → stok kembali bertambah
-
-Status berubah dari Dipinjam → Kembali
-
-✔️ Dashboard
-
-Ringkasan jumlah alat, penyewaan, dan pengembalian
-
-Tampilan kartu statistik
-
-Dashboard modern & responsif
-
----
-🔧 Persyaratan Sistem
-
-Pastikan instalasi berikut sudah tersedia:
-
-PHP 8.2+
-
-Composer
-
-MySQL / MariaDB
-
-Node.js (opsional)
-
-Laravel 11
----
-
-## 📸 UI Preview
-
-> Replace these images with your own screenshots
-
-![UI Preview](public/image/ui.png)
+Aplikasi ini hadir dengan tampilan modern, dashboard informatif, serta sistem penyewaan multi-produk yang mudah digunakan.
 
 ---
 
-## 📂 Installation
+## 🚀 Fitur Utama
 
-### 1️⃣ Clone Repository
+### 🎒 **1. Manajemen Alat**
+- Tambah / Edit / Hapus alat
+- Upload foto alat
+- Stok otomatis berkurang dan bertambah
+- Harga & deskripsi barang
+
+---
+
+### 🛒 **2. Pemesanan Multi-Produk**
+- Pilih banyak alat sekaligus
+- per-item subtotal calculation
+- Perhitungan total otomatis berdasarkan **durasi hari (tanggal sewa – kembali)**
+- Validasi stok otomatis
+
+---
+
+### 🔄 **3. Pengembalian Barang**
+- Menampilkan list barang yang masih dipinjam
+- Proses pengembalian → stok kembali bertambah
+- Status otomatis berubah:  
+  🔸 *Dipinjam* → ✔ *Kembali*
+
+---
+
+### 📊 **4. Dashboard Modern**
+- Statistik total alat  
+- Total penyewaan  
+- Total pengembalian  
+- Tampilan kartu statistik yang clean dan responsif
+
+---
+
+## 🖼️ UI Preview
+
+> 🔧 Replace with your own screenshots
+
+<p align="center">
+    <img src="public/image/ui.png" width="600">
+</p>
+
+---
+
+## 🔧 System Requirements
+
+Pastikan sudah menginstall:
+
+| Requirement | Version |
+|------------|---------|
+| PHP | 8.2+ |
+| Laravel | 11 |
+| Composer | Latest |
+| MySQL / MariaDB | ✓ |
+| Node.js | (optional) |
+
+---
+
+# 📦 Installation
+
+### ✅ **1. Clone Repository**
 ```bash
 git clone https://github.com/aromulya20/sewa-alat-outdorr.git
-cd your-repo
-
-2️⃣ Install Dependencies
+cd sewa-alat-outdorr
+✅ 2. Install Dependencies
+bash
+Copy code
 composer install
 npm install
 npm run build
-
-3️⃣ Create Environment File
+✅ 3. Copy Environment File
+bash
+Copy code
 cp .env.example .env
+Edit .env:
 
-
-Set your database credentials:
-
+makefile
+Copy code
 DB_DATABASE=db_sewa_outdoor
 DB_USERNAME=root
 DB_PASSWORD=
-
-4️⃣ Generate Key
+✅ 4. Generate App Key
+bash
+Copy code
 php artisan key:generate
-
-5️⃣ Run Migrations + Seeder
+✅ 5. Migrate + Seed Database
+bash
+Copy code
 php artisan migrate --seed
-
-6️⃣ Start Development Server
+✅ 6. Run Local Server
+bash
+Copy code
 php artisan serve
-
-
-Open the app:
+🌐 Buka aplikasi:
 👉 http://localhost:8000
 
-📘 How to Use
+📘 Cara Menggunakan Aplikasi
+Masuk ke halaman Data Alat
 
-Add products from the product menu
+Tambahkan alat beserta gambar dan stok
 
-Upload product images
+Buka menu Penyewaan
 
-Create a purchase order
+Pilih produk → masukkan jumlah → tanggal sewa & kembali
+➜ Total harga dihitung otomatis
 
-Select product → enter quantity → total auto-calculated
+Submit untuk menyimpan transaksi
 
-Submit order
+Cek detail penyewaan di halaman Riwayat
 
-View history in the transaction page
+Proses pengembalian di menu Pengembalian
 
+📁 Project Structure
+arduino
+Copy code
+app/
+├── Http/Controllers/
+database/
+├── migrations/
+└── seeders/
+resources/
+├── views/
+│   ├── alat/
+│   ├── sewa/
+│   └── pengembalian/
+public/
+└── image/
 🤝 Contributing
-
-Contributions are welcome!
-Feel free to submit a pull request or open an issue.
+Kontribusi sangat dipersilakan!
+Silakan open issue atau pull request.
 
 🔐 License
+Aplikasi ini menggunakan MIT License.
 
-This project is open-sourced under the MIT License.
+🧑‍💻 Author
+Created by:
 
-📝 Author
-
-Created by ARO MULYA PRATAMA
-Feel free to connect or contribute!
----
+⭐ ARO MULYA PRATAMA
+Feel free to connect, collaborate, or contribute!
