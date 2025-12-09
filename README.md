@@ -1,6 +1,6 @@
 <p align="center">
     <a href="#" target="_blank">
-        <img src="public/images/preview-ui.png" width="400" alt="App Logo">
+        <img src="public/images/ui.png" width="400" alt="App Logo">
     </a>
 </p>
 
@@ -45,7 +45,7 @@ The system provides a clean, responsive interface and easy workflows for:
 
 > Replace these images with your own screenshots
 
-![UI Preview](public/images/preview-ui.png)
+![UI Preview](public/images/ui.png)
 
 ---
 
