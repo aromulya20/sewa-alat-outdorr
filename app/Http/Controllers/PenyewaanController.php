@@ -32,7 +32,12 @@ class PenyewaanController extends Controller
             'tanggal_kembali' => 'required|date',
         ]);
 
+        // HITUNG JUMLAH HARI
+        $totalHari = (strtotime($req->tanggal_kembali) - strtotime($req->tanggal_sewa)) / 86400;
+        $totalHari = $totalHari < 1 ? 1 : $totalHari; 
+
         foreach($req->barang_id as $index => $barangId){
+
             $alat = Alat::findOrFail($barangId);
             $jumlah = $req->jumlah[$index];
 
@@ -45,21 +50,23 @@ class PenyewaanController extends Controller
             $alat->stok -= $jumlah;
             $alat->save();
 
-            // Simpan ke penyewaan
+            // HITUNG TOTAL HARGA 
+            $totalHarga = $alat->harga_sewa * $jumlah * $totalHari;
+
+            // Simpan penyewaan
             Penyewaan::create([
                 'nama_penyewa'    => $req->nama_penyewa,
                 'nama_barang'     => $alat->nama_alat,
                 'jumlah'          => $jumlah,
                 'tanggal_sewa'    => $req->tanggal_sewa,
                 'tanggal_kembali' => $req->tanggal_kembali,
-                'harga'           => $alat->harga_sewa,
+                'harga'           => $totalHarga,   
                 'status'          => 'dipinjam',
             ]);
         }
 
         return redirect()->route('sewa.index')->with('success', 'Pemesanan berhasil ditambahkan!');
     }
-
 
     // LIST PENGEMBALIAN
     public function pengembalian()

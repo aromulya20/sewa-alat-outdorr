@@ -88,7 +88,6 @@
 
 <h3 class="page-title">📊 Dashboard Admin Penyewaan</h3>
 
-<!-- ====== STATISTICS CARD ====== -->
 <div class="row mb-4">
     <div class="col-md-3 col-sm-6 mb-3">
         <div class="card-stats">
@@ -119,7 +118,6 @@
     </div>
 </div>
 
-<!-- ====== RECENT TABLE ====== -->
 <div class="row">
     <div class="col-md-12">
         <div class="recent-box">

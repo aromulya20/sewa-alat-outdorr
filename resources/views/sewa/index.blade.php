@@ -52,6 +52,7 @@
         background: #f39c12;
         color: white;
         font-weight: 500;
+        font-size: 25px;
     }
 
     .badge-success {

@@ -52,16 +52,11 @@
         color: white;
         border: none;
         transition: 0.3s;
+        font-size: 25px;
     }
 
     .btn-proses:hover {
         background: #1c5980;
-    }
-
-    @media (max-width: 768px) {
-        .table-responsive {
-            font-size: 14px;
-        }
     }
 </style>
 
@@ -90,8 +85,18 @@
                     <td>{{ $row->nama_penyewa }}</td>
                     <td>{{ $row->nama_barang }}</td>
                     <td>{{ $row->jumlah }}</td>
+
                     <td>{{ \Carbon\Carbon::parse($row->tanggal_sewa)->format('d M Y') }}</td>
-                    <td>{{ $row->tanggal_kembali ? \Carbon\Carbon::parse($row->tanggal_kembali)->format('d M Y') : '-' }}</td>
+
+                    {{-- Tanggal kembali otomatis --}}
+                    <td>
+                        @if($row->tanggal_kembali)
+                            {{ \Carbon\Carbon::parse($row->tanggal_kembali)->format('d M Y') }}
+                        @else
+                            <span style="color:#e74c3c; font-weight:bold;">Belum kembali</span>
+                        @endif
+                    </td>
+
                     <td>
                         @if($row->status == 'dipinjam')
                             <span class="badge badge-warning">Dipinjam</span>
@@ -99,6 +104,7 @@
                             <span class="badge badge-success">Kembali</span>
                         @endif
                     </td>
+
                     <td>
                         @if($row->status == 'dipinjam')
                         <form action="{{ route('pengembalian.proses', $row->id) }}" method="POST">

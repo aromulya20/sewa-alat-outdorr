@@ -64,19 +64,23 @@
     .btn-delete:hover {
         background: #b82020;
     }
-
 </style>
 
 <h3 class="page-title">📦 Daftar Alat Outdoor</h3>
 <p class="text-muted mb-4">Temukan semua alat outdoor yang tersedia untuk disewa.</p>
 
-<div class="row">
+<div class="d-flex justify-content-end mb-4">
+    <a href="{{ route('alat.create') }}" class="btn btn-primary" 
+       style="font-size: 16px; padding: 10px 20px; border-radius: 10px;">
+        ➕ Tambah Alat Baru
+    </a>
+</div>
 
+<div class="row">
     @foreach($data as $alat)
     <div class="col-md-4 mb-4">
         <div class="card card-item">
 
-            <!-- FOTO -->
             @if($alat->foto)
                 <img src="{{ asset('storage/' . $alat->foto) }}" class="card-img-top">
             @else
@@ -108,7 +112,6 @@
         </div>
     </div>
     @endforeach
-
 </div>
 
 @endsection
