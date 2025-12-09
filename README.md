@@ -12,33 +12,63 @@
 </p>
 
 ---
-
 ## 📦 About the Project
 
-This project is a **Rice Seedling Sales Management System** built with **Laravel 10**, designed to simplify the process of managing products, customers, sales transactions, and order summaries.
+📘 Sewa Outdoor — Sistem Penyewaan Peralatan Outdoor
 
-The system provides a clean, responsive interface and easy workflows for:
-
-- Managing rice seedling products  
-- Uploading product photos  
-- Creating sales transactions  
-- Automatic price calculation  
-- Customer registration and validation  
-- Viewing all transaction history  
-- Database seeding for quick initialization  
-
+Sewa Outdoor adalah aplikasi berbasis Laravel 11 untuk mengelola penyewaan peralatan outdoor seperti tenda, kompor portable, matras, senter, dan lain-lain.
+Sistem ini menyediakan fitur lengkap mulai dari manajemen alat, pemesanan multi-item, pengembalian barang, hingga dashboard statistik.
 ---
 
-## 🚀 Features
+🚀 Fitur Utama
+✔️ Manajemen Alat
 
-- ✔️ Product CRUD (name, price, stock, description, image)  
-- ✔️ Customer CRUD  
-- ✔️ Order creation + automatic total price calculation  
-- ✔️ Product image upload & preview  
-- ✔️ Dashboard with clean UI  
-- ✔️ Database seeder for quick setup  
-- ✔️ Laravel Blade + Bootstrap UI  
+Tambah, ubah, hapus alat
 
+Upload foto alat
+
+Stok otomatis berkurang dan bertambah
+
+✔️ Pemesanan Multi-Produk
+
+Tambah banyak item sekaligus ke keranjang
+
+Hitung subtotal per barang
+
+Menghitung total berdasarkan durasi hari
+
+Validasi stok otomatis
+
+✔️ Pengembalian Barang
+
+List barang yang sedang dipinjam
+
+Proses pengembalian → stok kembali bertambah
+
+Status berubah dari Dipinjam → Kembali
+
+✔️ Dashboard
+
+Ringkasan jumlah alat, penyewaan, dan pengembalian
+
+Tampilan kartu statistik
+
+Dashboard modern & responsif
+
+---
+🔧 Persyaratan Sistem
+
+Pastikan instalasi berikut sudah tersedia:
+
+PHP 8.2+
+
+Composer
+
+MySQL / MariaDB
+
+Node.js (opsional)
+
+Laravel 11
 ---
 
 ## 📸 UI Preview
@@ -53,7 +83,7 @@ The system provides a clean, responsive interface and easy workflows for:
 
 ### 1️⃣ Clone Repository
 ```bash
-git clone https://github.com/your-username/your-repo.git
+git clone https://github.com/aromulya20/sewa-alat-outdorr.git
 cd your-repo
 
 2️⃣ Install Dependencies
@@ -67,7 +97,7 @@ cp .env.example .env
 
 Set your database credentials:
 
-DB_DATABASE=bibit_padi
+DB_DATABASE=db_sewa_outdoor
 DB_USERNAME=root
 DB_PASSWORD=
 
@@ -107,5 +137,8 @@ Feel free to submit a pull request or open an issue.
 
 This project is open-sourced under the MIT License.
 
+📝 Author
 
+Created by ARO MULYA PRATAMA
+Feel free to connect or contribute!
 ---
